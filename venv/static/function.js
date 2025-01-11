@@ -338,7 +338,6 @@ function selectAnswer(selectedAnswer) {
 }
 
 function showResult() {
-    //vaqrobt imgs
     currentquiz.innerHTML = "Quiz Complete!";
     //gamodis quiz complete text
     optionsContainer.innerHTML = `<p>Your final score is: ${score} out of ${quizData[quizId].length}</p>`;
