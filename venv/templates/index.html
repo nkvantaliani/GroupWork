@@ -1,0 +1,58 @@
+<title>Home</title>
+{% extends "base.html" %}
+{% block body %}
+
+<div class="jumbotron" xmlns="http://www.w3.org/1999/html">
+    <div class="container text-center">
+        <h1>Super Duper Quizzes</h1>
+    </div>
+</div>
+
+<div id="leaderboard">
+    <h3>Leaderboard</h3>
+    <ul id="leaderboard-list"></ul>
+</div>
+<div class="container my-5">
+    <div class="row">
+        {% set quiz_names = [
+            'Math Quiz', 
+            'Programming Quiz', 
+            'Brainrot Quiz', 
+            'IT Quiz', 
+            'Flask Quiz', 
+            'Valorant Quiz'
+        ] %}
+        {% set quiz_images = [
+            'math.jpg', 
+            'pro.webp', 
+            'brainrot.jpg', 
+            'it.jpg', 
+            'tanjva.png', 
+            'Valorant.webp'
+        ] %}
+        {% for i in range(1, 7) %}
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card" style="width: 300px; height: 400px; overflow: hidden;">
+                <div class="card-body">
+                            <h1 class="o1">{{quiz_names[i-1]}}</h1> 
+                    <a href="{{ url_for('quiz') }}?quiz={{ i }}">
+                        <div class="quiz1">
+                            <img src="{{ url_for('static', filename=quiz_images[i - 1]) }}"  style="width: 100%; height: auto;">
+                        </div>    
+
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+</div>
+
+<script src="/static/function.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+{% endblock %}

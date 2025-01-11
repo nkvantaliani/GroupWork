@@ -1,0 +1,123 @@
+body {
+    font-family: cursive;
+    margin: 0;
+    padding: 0;
+    background-image: url('background.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.cookie {
+    margin: 20px auto;
+    width: 150px;
+    cursor: pointer;
+}
+
+.cookie:active{
+    animation-name: click;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+.stats {
+    color: white;
+    margin: 20px;
+    font-size: 25px;
+}
+
+.gadgets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    text-align: center;
+}
+
+.gadget {
+    width: 275px;
+    height: 55px;
+    text-align: center;
+    background-color: black;
+    border-radius: 8px;
+    font-size:20px;
+    cursor: pointer;
+    color: white;
+    border: 5px solid goldenrod;
+}
+
+.gadget.disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.gadget:hover {
+    border: 2px solid black;
+}
+
+@media (max-width: 950px) {
+    .gadgets {
+        flex-direction: column;
+    }
+}
+
+
+
+@keyframes click{
+    25%{
+        scale: 0.9;
+    }
+
+    50%{
+        scale:0.8;
+    }
+
+    75%{
+        scale:0.9;
+    }
+
+    100%{
+        scale: 1;
+    }
+}
+
+
+.container {
+    margin-left: 95px;
+}
+
+.line {
+    width: 50px;
+    height: 900px;
+    margin-left: 550px;
+    margin-top: -650px;
+    background: linear-gradient(#8E0E00,brown, #d6ae7b, #FCB69F, #8E0E00);
+}
+
+#cookie {
+    width: 320px;
+    height: 320px;
+    margin-left: 30px;
+}
+
+.container-text {
+    width: 600px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-left: -94px;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 55px;
+}
+
+
+.firstText {
+    margin-left: 25px;
+    color: white;
+}
+
+.container-text {
+    color: white;
+}
+
+.gadgets {
+    display: flex;
+    flex-direction: row;
+    margin-left: 125px;
+}

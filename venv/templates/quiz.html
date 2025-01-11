@@ -1,0 +1,29 @@
+<title>Quiz</title>
+<link rel="stylesheet" href="/static/style.css">
+{% extends "base.html" %}
+
+{% block body %}
+  <div class="quiz-container">
+    <header class="quiz-header">
+      <h1 id="question">ES ARIS KItXVA</h1>
+      <div class="quiz-info">
+        <span class="score">Score: <span id="score">0</span></span>
+      </div>
+    </header>
+
+    <main class="quiz-content">
+      <div class="image-container">
+      <div id="quiz"></div>
+      <div class="options-container" id="options"></div>
+      </div>
+    </main>
+
+    <footer>
+      <p>© Nata Kvata Corporation 2025</p>
+    </footer>
+  </div>
+
+  <script src="/static/function.js"></script>
+
+
+{% endblock %}

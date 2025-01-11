@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 style="color:white" class="firstText">Cookie Clicker Game</h1>
+    <img src="pngegg.png" alt="Cookie" class="cookie" id="cookie" onclick="clickCookie()" onmouseleave="cookieAnimationPlus()" onmouseover="cookieAnimationHover()">
+    <div class="stats">
+        <p>Cookies: <span id="cookies">0</span></p>
+        <p>Gold: <span id="gold">0</span></p>
+    </div>
+    <div class="gadgets">
+        <div class="gadget" id="gadget1" onclick="buyGadget(1)">
+            <span class="span1"> +2</span> - Cost: 10 cookies
+        </div>
+        <div class="gadget" id="gadget2" onclick="buyGadget(2)">
+            <span class="span1"> +3</span> -Cost: 50 cookies
+        </div>
+        <div class="gadget" id="gadget3" onclick="buyGadget(3)">
+            <span class="span1"> +4</span> -Cost: 200 cookies
+        </div>
+        <div class="gadget" id="gadget4" onclick="buyGadget(4)">
+            <span class="span1"> autoclicker</span> - Cost: 250 gold
+        </div>
+        <div class="gadget" id="gadget5" onclick="buyGadget(5)">
+            <span class="span1"> Watch a video</span> - Earn: +50 cookies, +50 gold
+        </div>
+    </div>
+
+    <script src = "script.js"></script>
+</body>
+</html>

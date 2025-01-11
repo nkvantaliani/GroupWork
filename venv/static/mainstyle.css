@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 105vh;
+    width: 172vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.quizzes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 1000px;
+}
+
+.firsthalf,
+.secondhalf {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quiz1,
+.quiz2,
+.quiz3,
+.quiz4,
+.quiz5,
+.quiz6 {
+    width: 400px;
+    height: 400px;
+    border: 1px solid rgba(0, 0, 0, 0.301);
+    display: flex;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    margin: 5px;
+}
+
+
+
+.o1,
+.o2,
+.o3{
+    position: absolute;
+    top: 70px;
+}
+
+.o4,
+.o5,
+.o6{
+    position: absolute;
+    bottom: 340px;
+}
