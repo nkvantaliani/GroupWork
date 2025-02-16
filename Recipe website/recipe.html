@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <img src="logo.png" alt="Logo">
+        <h1>Recipes</h1>
+        <ul>
+            <li><a href="index.html">Popular</a></li>
+            <li><a href="vegan.html">Vegan</a></li>
+            <li><a href="diet.html">Diet</a></li>
+            <li><a href="dessert.html">Dessert</a></li>
+        </ul>
+    </nav>
+
+    
+        <h2 id="recipe-title"></h2>
+        <img id="recipe-image" src="" alt="">
+        <p id="recipe-description"></p>
+        <button id="back-button">⬅ Back to Recipes</button>
+    
+    
+
+
+        <p>Recipe Website // nata.kvata(✿◕‿◕✿)</p>
+
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const recipeName = urlParams.get("name");
+    
+            if (!recipeName) {
+                document.body.innerHTML = "<h2>Recipe not found</h2>";
+                return;
+            }
+    
+            const recipe = recipeManager.recipes.find(r => r.name === recipeName);
+            
+            if (recipe) {
+                document.getElementById("recipe-title").textContent = recipe.name;
+                document.getElementById("recipe-image").src = recipe.image;
+                document.getElementById("recipe-image").alt = recipe.name;
+                document.getElementById("recipe-description").textContent = recipe.description;
+    
+                // Determine back link based on category
+                const backButton = document.getElementById("back-button");
+                let backLink = "index.html"; // Default to Popular Recipes
+    
+                if (recipe.category === "vegan") backLink = "vegan.html";
+                else if (recipe.category === "diet") backLink = "diet.html";
+                else if (recipe.category === "dessert") backLink = "dessert.html";
+    
+                backButton.addEventListener("click", () => {
+                    window.location.href = backLink;
+                });
+            } else {
+                document.body.innerHTML = "<h2>Recipe not found</h2>";
+            }
+        });
+    </script>
+    
+
+</body>
+</html>
