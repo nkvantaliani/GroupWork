@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+    <nav>
+        <h1>Recipes</h1>
+        <ul>
+            <li><a href="index.html">Popular</a></li>
+            <li><a href="vegan.html">Vegan</a></li>
+            <li><a href="diet.html">Diet</a></li>
+            <li><a href="dessert.html">Dessert</a></li>
+        </ul>
+    </nav>
+
+    <button id="back-button">⬅ Back to Recipes</button>
+    <div class="recipe-container">
+        <img id="recipe-image">
+        <div class="recipe-content">
+            <h2 id="recipe-title"></h2>
+            <p id="recipe-description"></p>
+            <div id="recipe-details"></div> 
+        </div>
+    </div>
+
+    
+    
+
+
+        <p>Recipe Website // nata.kvata(✿◕‿◕✿)</p>
+
+
+    <script src="script.js"></script>
+<script>
+//velodebit chatvirtvas funkciis (internal roa ar sheimchniot ( ╯□╰ ))        
+document.addEventListener("DOMContentLoaded", () => {
+
+	//vighebt current page is urls radganac chadebivart
+    const urlParams = new URLSearchParams(window.location.search);
+	//vighebt urlparamshi name divs
+    const recipeName = urlParams.get("name");
+
+    //tuar moipova ubralod error gamogvaq saitze h2 it
+    if (!recipeName) {
+        document.body.innerHTML = "<h2>Recipe not found</h2>";
+        return;
+    }
+
+    //vedzebt recipes list shi recipes saxelit myof recipe- s 
+    const recipe = recipeManager.recipes.find(r => r.name === recipeName);
+
+    // tu recipe vipovet vucvlit recipe.html shi myof div ebs context-s script.js -dan
+    if (recipe) {
+        document.getElementById("recipe-title").textContent = recipe.name;
+        document.getElementById("recipe-image").src = recipe.image;
+        document.getElementById("recipe-image").alt = recipe.name;
+        document.getElementById("recipe-description").textContent = recipe.description;
+
+        const detailsContainer = document.getElementById("recipe-details");
+        detailsContainer.innerHTML = `<p>${recipe.details.replace(/\n/g, "<br>")}</p>`;
+    
+        // backbutton funkcias vuwert
+        const backButton = document.getElementById("back-button");
+        let backLink = "index.html"; // vighebt default-s sanamde shevcvlit
+
+
+    	//tu recipe category sheesabameba amave categorys vbrundebit amave saitze
+        if (recipe.category === "vegan") backLink = "vegan.html";
+        else if (recipe.category === "diet") backLink = "diet.html";
+        else if (recipe.category === "dessert") backLink = "dessert.html";
+    	//daaa sabolood vuwert clickable funkcias am buttons ヾ(•ω•`)o
+        backButton.addEventListener("click", () => {
+            window.location.href = backLink;
+            });
+        } else {
+            document.body.innerHTML = "<h2>Recipe not found</h2>";
+            //tu  ver moidzebna recipe mash gamogvaq error manishnebeli h2 saitze.
+        }
+
+});
+
+    
+</script>
+    
+
+</body>
+</html>
