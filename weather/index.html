@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="weather-box">
+        <div class="search">
+            <input type="text" id="cityIn" placeholder="Enter city name">
+            <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+        
+        <div class="city">
+            <h1 id="city">
+                <span class="loading">
+                    Detecting location
+                    <span class="spinner"></span>
+                </span>
+            </h1>
+        </div>
+        
+        <img id="wIcon" class="icon" src="img/sun.png" alt="Weather">
+        
+        <div class="temp" id="temp">--°C</div>
+        
+        <div class="desc" id="desc">--</div>
+        
+        <nav class="nav">
+            <a href="index.html" class="active"><i class="fas fa-home"></i> Weather</a>
+            <a href="index2.html"><i class="fas fa-star"></i> Favs</a>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
